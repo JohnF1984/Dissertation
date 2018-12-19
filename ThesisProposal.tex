@@ -18,6 +18,7 @@
 \fi
 
 \usepackage[backend=biber,
+            bibencoding=utf8,
             natbib=true,
             style=authoryear,
             hyperref=true,
@@ -26,7 +27,7 @@
 %            backref=true,
             maxcitenames=3,
             block=none]{biblatex}
-\addbibresource{thesisbiblio.bib}
+\addbibresource{refs/thesisbiblio.bib}
 
 \usepackage[colorinlistoftodos]{todonotes} % remove draft option in \documentclass to disable this package
 
@@ -184,7 +185,7 @@ Figure~\ref{fig:DCenergy} from \citep{edsdoj.99f37e7899fb4fcaabdaa81e395626c4201
   \caption{How Energy is Consumed in a Data Centre.}
   \label{fig:DCenergy}
   \centering
-    \includegraphics[scale=0.35]{"Data center energy".png}
+    \includegraphics[scale=0.35]{Data_center_energy.png}
 \end{figure}
 
 %Currently, In terms of energy consumption, the entire Information and Communication Technology (ICT) sector including Data Centres now generates up to 2\% of the global CO2 emissions, which is on a par with the aviation industry.
@@ -197,7 +198,7 @@ Figure~\ref{fig:DCenergyEU-US}, reproduced from \citet{edsbas.13818AC20170101} s
   \caption{Energy Consumption of Data Centres in the EU and US from 2000 to currently.}
   \label{fig:DCenergyEU-US}
   \centering
-    \includegraphics[scale=0.45]{"Energy consumption".png}
+    \includegraphics[scale=0.45]{Energy_consumption.png}
 \end{figure}
 
 With Data Centres consuming more energy, there is an obvious incentive, both from a cost and a green perspective, to reduce energy consumption per Data Centre. This can be done by making Data Centres more efficient for the energy they consume and the measurement that is used to measure energy efficiency is the \emph{Power Usage Efficiency} (PUE) score. This is described as
@@ -213,14 +214,14 @@ In terms of the current trends of energy usage, research by \citet{edsbas.13818A
   \caption{The average PUE across different locations.}
   \label{fig:PUE-by-location}
   \centering
-    \includegraphics[scale=0.45]{"geographical zoning".png}
+    \includegraphics[scale=0.45]{geographical_zoning.png}
 \end{figure}
 
 \begin{figure}[h]
   \caption{The average PUE from 2000 to currently.}
   \label{fig:PUE-by-year}
   \centering
-    \includegraphics[scale=0.35]{"Average PUE per reporting year".png}
+    \includegraphics[scale=0.35]{Average_PUE_per_reporting_year.png}
 \end{figure}
  
 So the challenge, as outlined in the various literature below (section \ref{subsec:[Improving Data Centre Energy Efficiency]}), is how to make a Data Centre more energy efficient by maximizing the energy used for IT equipment and reducing the consumption of energy by non-IT equipment. 
@@ -244,7 +245,7 @@ Figure~\ref{fig:TSSGdataCentreDesign}, provided from \citet{TSSG} demonstrates t
   \caption{The design of the WIT-TSSG Data Centre.}
   \label{fig:TSSGdataCentreDesign}
   \centering
-    \includegraphics[scale=0.35]{"TSSG Diagram".png}
+    \includegraphics[scale=0.35]{TSSG_Diagram.png}
 \end{figure}
 
 From this diagram we see that there are 26 Cabinets and these use varying degrees of KW per cabinet to house over 160 servers. In addition, the Data Centre is designed so that there are separate rooms for servers, networking equipment, UPS and batteries with the generator and cooling equipment outside. This is to optomise the best cooling option for each room, resulting in the server room not having any hot or cold aisles. Instead, all heat and cooling is contained inside the 26 cabinets \citep{TSSG}.
@@ -345,7 +346,7 @@ Similar to most modern Data Centres, sensors and the use of network devices are 
   \caption{The schema of the WIT-TSSG Data Centre.}
   \label{fig:TSSGdataschema}
   \centering
-    \includegraphics[scale=0.45]{"TSSG Data Schema".png}
+    \includegraphics[scale=0.45]{TSSG_Data_Schema.png}
 \end{figure}
 
 As we see from the schema, the data captures a multitude of metered energy usage variables, different weather data, and temperature and water usage data. The data outlined here is available from 2014 right up to present, captured at 5 minute intervals, making this a time series data set. In the next section, the data is explored at an initial level to find any seasonal trends or predictive variables. 
@@ -360,7 +361,7 @@ The schema introduced in Figure \ref{fig:TSSGdataschema} outlines the vast scale
   \caption{Energy consumption (in kW usage per 5 minute intervals) of one cabinet in the Data Centre over the entire year of 2017.}
   \label{fig:Annualenergyfigure}
   \centering
-    \includegraphics[scale=0.30]{"Annual energy consumption".png}
+    \includegraphics[scale=0.30]{Annual_energy_consumption.png}
 \end{figure}
 
 Figure \ref{fig:Annualenergyfigure}, generated using Listing~\ref{list:[Annual Energy Consumption]}, illustrates the energy consumption of one particular server cabinet within the Data Centre (Cabinet 26A) over the course of 2017. The daily readings are taken from between 9am and 10am each day and while the chart may initially suggest that the energy usage has been relatively consistent, there are significant spikes in energy consumption in April and August, with some considerable drops in demand too. The Research Techniques section (\ref{subsec:[Research Techniques]}) will outline how this study would seek to investigate if these spikes can be predicted so that another cabinet could share some of the load to reduce energy consumption within the Data Centre.
@@ -371,7 +372,7 @@ However, while Figure \ref{fig:Annualenergyfigure} was a snapshot of energy usag
   \caption{Energy consumption (in kW usage per 5 minute intervals) of three different server cabinets in the Data Centre over the course of one day (2017-09-13).}
   \label{fig:Dailyenergyfigure}
   \centering
-    \includegraphics[scale=0.35]{"Daily energy consumption of cab131415".png}
+    \includegraphics[scale=0.35]{Daily_energy_consumption_of_cab131415.png}
 \end{figure}
    
 Figure \ref{fig:Dailyenergyfigure} reports significant spikes in energy consumption in two of the cabinets around 11am. Again, this is another example of how Data Mining techniques might be applied to assist in being able to predict when such spikes occur. 
@@ -382,7 +383,7 @@ While certain spikes in energy consumption might be suitable for further investi
   \caption{Energy consumption (in kW usage per 5 minute intervals) of both Chillers and one server cabinet in the Data Centre over the course of 2017}
   \label{fig:cabvchillerfigure}
   \centering
-    \includegraphics[scale=0.45]{"Energy consumption of cab26 and chillers".png}
+    \includegraphics[scale=0.45]{Energy_consumption_of_cab26_and_chillers.png}
 \end{figure} 
 
 Other interesting preliminary analysis of the data centred around water consumption at the Data Centre (Figure \ref{fig:annualwaterfigure} ) and the energy usage of the generator during a severe weather event, in this case being Storm Ophelia on October 2017 (Figure \ref{fig:opheliafigure} ). 
@@ -391,14 +392,14 @@ Other interesting preliminary analysis of the data centred around water consumpt
   \caption{Annual water flow (in litres per 5 minute intervals) to LCP 1 measured at 9am every day during 2017}
   \label{fig:annualwaterfigure}
   \centering
-    \includegraphics[scale=0.45]{"Annual Water Flow".png}
+    \includegraphics[scale=0.45]{Annual_Water_Flow.png}
 \end{figure} 
 
 \begin{figure}[h]
   \caption{Energy consumption (in kW usage per 5 minute intervals) of the Generator before, during and after Storm Ophelia in October 15th 2017}
   \label{fig:opheliafigure}
   \centering
-    \includegraphics[scale=0.50]{"Ophelia generator".png}
+    \includegraphics[scale=0.50]{Ophelia_generator.png}
 \end{figure} 
 
 All these charts are provided to simply demonstrate the range of data available. The next section discusses how this data could be screened to build a predictive model and the challenges that arise from this.  
@@ -425,7 +426,7 @@ The proposed plan of work for this project is outlined in the Gantt chart in Fig
   \caption{Project Plan for 2018-2019.}
   \label{fig:projectplan}
   \centering
-    \includegraphics[scale=0.45]{"Gannt Chart schedule of work".png}
+    \includegraphics[scale=0.45]{Gannt_Chart_schedule_of_work.png}
 \end{figure}
 
 \section{Proposal Summary}
